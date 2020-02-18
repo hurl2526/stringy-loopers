@@ -11,7 +11,8 @@ addChallengeBanner(0);
 addChallengeBanner(1);
 function vowelsOnly(words) {
 for (i = 0; i <= words.length; i++) {
-  if (['a', 'e', 'i', 'o', 'u'].includes(words.split('')[i])) {
+  if (['a', 'e', 'i', 'o', 'u'].includes(words[i])) 
+  {
     console.log(words[i]);}
     }
   }   
@@ -56,12 +57,35 @@ function firstFour(str, num){
 addChallengeBanner(5);
 function uFinder(words) {
   for (i = 0; i <= words.length; i++) {
-    if (['u'].includes(words.split('')[i])) {
-      console.log(i);}
-      }
+    if(words[i] === 'u') {
+      console.log(i);
     }
-    uFinder('You picked the wrong house, bub.')
+  }
+}
+uFinder('You picked the wrong house, bub.')
 //  6. Write a function that prints out the first index of the letter `u` in the given string. Do not use `indexOf`. Now call it with `'You picked the wrong house, bub.'` You should see the number `2` printed, and only that.
 addChallengeBanner(6);
+function firstU(words) {
+  for (i = 0; i <= words.length; i++) {
+    if(words[i] === 'u') {
+      console.log(i);
+        return true;
+      }
+    } 
+  }
+    firstU('You picked the wrong house, bub.')  
 // 7. Write a function that prints out the first index of the letter `u` in the given string, with a `-1` printed if it doesn't find it. Do not use `indexOf`. Now call it with `'You picked the wrong house, bub.'` You should see the number `2` printed, and only that. Now call it with `"I'm Canadian."` You should see `-1` print out.
 addChallengeBanner(7);
+function minusOne(words) {
+  for (i = 0; i <= words.length; i++) {
+    if(words[i] === 'u') {
+      console.log(i);
+        return true; 
+    }
+  }
+  console.log('-1')
+}
+
+  minusOne('You picked the wrong house, bub.');
+  addChallengeBanner(7.2)
+  minusOne("I'm Canadian.")
