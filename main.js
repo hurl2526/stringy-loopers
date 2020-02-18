@@ -11,7 +11,7 @@ addChallengeBanner(0);
 addChallengeBanner(1);
 function vowelsOnly(words) {
 for (i = 0; i <= words.length; i++) {
-  if (['a', 'e', 'i', 'o', 'u'].includes(words[i])) 
+  if ('aeiou'.includes(words[i])) 
   {
     console.log(words[i]);}
     }
@@ -23,7 +23,7 @@ addChallengeBanner(2);
 function firstFiveVowels(words) {
   let vowelCount = 0  
   for (i = 0; i <= words.length; i++) {
-    if (['a', 'e', 'i', 'o', 'u'].includes(words.split('')[i]) && vowelCount <= 5) {
+    if ('aeiou'.includes(words[i]) && vowelCount <= 5) {
       console.log(words[i]);}
       vowelCount = vowelCount + 1;
       }
@@ -33,7 +33,7 @@ firstFiveVowels('Hello!');
 // 3. Write a function that prints out every third character, _without_ examining every character. In other words, you may _not_ increment your index by one and decide whether to print based on the result of a modulus operation on that index. (A standard solution for this.). Now call it with "I am the alfalfa and the omelette." You should see "a", followed by "t", followed by a space, and so on. An "e" should be the last thing printed, with no `undefined` values showing up.
 addChallengeBanner(3);
 function thirdCharacter(words) {
-	for(i = 2; i < words.length; i= i+ 3) {
+	for(i = 2; i < words.length; i= i + 3) {
 		console.log(words[i]);
 	}
 }
@@ -41,15 +41,23 @@ thirdCharacter("I am the alfalfa and the omelette.");
 
 // 4. Write a function that prints out the first four characters after the given index in the given string, or, if there are fewer characters remaining from, prints only the remaining ones. Now call it with 'Oh hi, I didn't see you there. Welcome.' and `4` as your parameters. You should see 'i', followed by ',', followed by a space, followed by an 'I'. Now call it again with 'Oh hi, I didn't see you there. Welcome.' and `36` as your parameters. You should 'm', 'e', and '.' printed, and no fourth printing.
 addChallengeBanner(4);
-function firstFour(str, num){
-  for(i = 1; num < str.length; num++){
-    console.log(str[num]);
-    i++;
-    if(i > 4) {
-      return true
-    }
+// function firstFour(str, num){
+//   for(i = 1; num < str.length; num++){
+//     console.log(str[num]);
+//     i = i + 1;
+//     if(i > 4) {
+//       return true
+//     }
+//   }
+// }
+function firstFour(str, start){
+  let count = 0
+  for (let i = start; i < str.length && count < 4; i++){
+    console.log(str[i]);
+    count ++;
   }
 }
+// could also do for (count < 4) instead of &&
   firstFour("Oh hi, I didn't see you there. Welcome.", 4);
   addChallengeBanner(4.2)
   firstFour("Oh hi, I didn't see you there. Welcome.", 36);
